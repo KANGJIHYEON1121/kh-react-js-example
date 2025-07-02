@@ -1,37 +1,37 @@
-// // 함수 호이스팅
-// add(10, 20);
+// 함수 호이스팅
+add(10, 20);
 
-// // 함수 선언문 : 함수 호이스팅
-// function add(num1, num2) {
-//     console.log(num1 + num2);
-// }
+// 함수 선언문 : 함수 호이스팅
+function add(num1, num2) {
+    console.log(num1 + num2);
+}
 
-// // add2();  // 호이스팅 X
+// add2();  // 호이스팅 X
 
-// // 함수 표현식 : 호이스팅 X 
-// let add2 = function (num1, num2) {
-//     console.log(num1 + num2);
-// }
+// 함수 표현식 : 호이스팅 X 
+let add2 = function (num1, num2) {
+    console.log(num1 + num2);
+}
 
-// add2(10, 20);
+add2(10, 20);
 
-// let sub = (num1, num2) => console.log(num1 + num2);
+let sub = (num1, num2) => console.log(num1 + num2);
 
-// sub(10, 30);
-// // add3(); // 호출 X
-// console.log(sub);
+sub(10, 30);
+// add3(); // 호출 X
+console.log(sub);
 
-// // 콜백함수의 활용
-// let sub1 = (num1, num2) => console.log(num1 + num2);
-// let sub2 = (num1, num2) => console.log(num1 * num2);
-// let sub3 = (func, num1, num2) => {
-//     console.log(num1 / num2);
-//     func(num1, num2);
-// }
+// 콜백함수의 활용
+let sub1 = (num1, num2) => console.log(num1 + num2);
+let sub2 = (num1, num2) => console.log(num1 * num2);
+let sub3 = (func, num1, num2) => {
+    console.log(num1 / num2);
+    func(num1, num2);
+}
 
-// // 함수 호출
-// sub3(sub2, 10, 2);
-// sub3(sub1, 30, 20);
+// 함수 호출
+sub3(sub2, 10, 2);
+sub3(sub1, 30, 20);
 
 // 응용
 function repeat(count, callback) {
