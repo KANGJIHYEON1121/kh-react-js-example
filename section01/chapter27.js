@@ -30,3 +30,23 @@ function funcA(p1, p2, p3) {
 }
 
 funcA(...arr1);
+
+// 4. rest 매개변수
+// rest는 나머지 , 나머지 매개변수
+arr1 = [1, 2, 3];
+function funcB(one, ...arguments) {
+    console.log(one);
+    console.log(arguments);
+}
+
+funcB(...arr1);
+
+// 깊은복사 내용 비교
+let o1 = { name: "홍길동" };
+let o2 = { ...o1 };
+let o3 = o1;
+
+console.log(o1 === o2);    // false
+console.log(o1 === o3);    // true
+console.log(`타입: ${typeof JSON.stringify(o1)}, ${JSON.stringify(o1)}`)     // 문자열로 반환
+console.log(JSON.stringify(o1) === JSON.stringify(o2));    //true
