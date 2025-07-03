@@ -14,6 +14,10 @@ const newArr = [];
 //     // console.log(array);
 // });
 
+for (let value of arr) {
+    console.log(value);
+}
+
 // console.log(newArr);
 
 // map 매서드
@@ -45,6 +49,16 @@ let arr1 = [
     { name: "구길동", hobby: "테니스" },
     { name: "저길동", hobby: "테니스" },
     { name: "홍길동", hobby: "독서" },
+    { name: "김길동", hobby: "독서" },
+    { name: "이길동", hobby: "독서" },
+];
+
+let arr2 = [
+    { name: "구길동", hobby: "테니스" },
+    { name: "저길동", hobby: "테니스" },
+    { name: "홍길동", hobby: "독서" },
+    { name: "김길동", hobby: "독서" },
+    { name: "이길동", hobby: "독서" },
 ];
 
 const tennisPeople = arr1.filter(item => item.hobby === "테니스");
@@ -53,3 +67,27 @@ console.log(tennisPeople);
 // 배열 내장객체 map
 const names = arr1.map(e => e.name);
 console.log(names);
+
+// 배열 내장객체 slice
+console.log(arr1);
+
+// 배열 내장객체 concat
+console.log(arr1.concat(arr2.slice(0, 3)))
+
+// 배열내장객체 sort
+let charsArr = ["가", "다", "나", "라", "사", "바"];
+console.log(charsArr.sort());
+
+let numArr = [1, 20, 11, 31, 24, 100, 68, 55, 12];
+// console.log(numArr.sort((a, b) => a - b));
+// console.log(numArr.sort((a, b) => b - a));
+
+// toSorted (가장 최근에 추가된 최신 함수)
+// 정렬된 새로운 배열을 반환하는 메서드 깊은 복사
+const sortNumArr = numArr.toSorted((a, b) => b - a);
+console.log(sortNumArr);
+console.log(numArr);
+
+const arr6 = ["김동진", "님", "안녕하세요", "반가워요"];
+const joined = arr6.join("~~");
+console.log(joined);
