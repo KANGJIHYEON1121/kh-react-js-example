@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 function Register() {
   // 값을 입력해서 화면세 보여야되는 곳은 useState
@@ -11,16 +11,32 @@ function Register() {
     bio: "",
   });
 
+  const countRef = useRef(0); // const countRef {current : 0}
+  const nameRef = useRef(); // const inputRef {current : undefined}
+
+  const onSubmit = (e) => {
+    if (nameRef.current.value === "") {
+      alert("이름을 입력해주세요");
+      nameRef.current.focus();
+    } else {
+      alert("전송 완료!");
+      nameRef.current.value = "";
+    }
+  };
+
   const onChange = (e) => {
+    countRef.current++;
     setInput({ ...input, [e.target.name]: e.target.value });
   };
 
   return (
     <div>
       <h1>회원가입</h1>
+      <h2>이벤트 발생 횟수 {countRef.current}</h2>
       <div>
         <div>
           <input
+            ref={nameRef}
             value={input.name}
             name={"name"}
             onChange={onChange}
@@ -46,6 +62,9 @@ function Register() {
         <div></div>
       </div>
       <textarea value={input.bio} name={"bio"} onChange={onChange} />
+      <div>
+        <button onClick={onSubmit}>전송</button>
+      </div>
     </div>
   );
 }
