@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./List.css";
 import ListItem from "./ListItem";
 
-const List = ({ todos }) => {
+const List = ({ todos, onUpdate, onDelete }) => {
   const [search, setSearch] = useState("");
 
   const onChangeInput = (e) => {
@@ -15,7 +15,7 @@ const List = ({ todos }) => {
     }
 
     return todos.filter((data) => {
-      return todos.content.includes(search);
+      return data.content.toLowerCase().includes(search.toLowerCase());
     });
   };
 
@@ -30,8 +30,13 @@ const List = ({ todos }) => {
         onChange={onChangeInput}
       />
       <div className="list_wrapper">
-        {todos.map((data) => (
-          <ListItem key={data.id} {...data} />
+        {filterTodos.map((data) => (
+          <ListItem
+            key={data.id}
+            {...data}
+            onUpdate={onUpdate}
+            onDelete={onDelete}
+          />
         ))}
       </div>
     </div>

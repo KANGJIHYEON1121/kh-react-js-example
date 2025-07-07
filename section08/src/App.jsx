@@ -40,16 +40,31 @@ function App() {
     };
     setTodos([...todos, newTodo]);
   };
+
   // 수정하기
+  const onUpdate = (tagId) => {
+    setTodos(
+      todos.map((data) => {
+        return data.id === tagId ? { ...data, isDone: !data.isDone } : data;
+      })
+    );
+  };
 
   // 삭제하기
+  const onDelete = (tagId) => {
+    setTodos(
+      todos.filter((data) => {
+        return data.id !== tagId;
+      })
+    );
+  };
 
   return (
     <>
       <div className="App">
         <Header />
         <Edit onInsert={onInsert} />
-        <List todos={todos} />
+        <List todos={todos} onUpdate={onUpdate} onDelete={onDelete} />
       </div>
     </>
   );
