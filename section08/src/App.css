@@ -1,0 +1,14 @@
+.App {
+  width: 500px;
+  background-color: rgb(250, 250, 250);
+  margin: 0 auto;
+  border: 2px solid black;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
+}
