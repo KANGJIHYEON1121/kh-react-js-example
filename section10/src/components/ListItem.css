@@ -1,0 +1,48 @@
+.ListItem {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  border-bottom: 1px solid rgb(203, 203, 203);
+}
+
+.TodoItem input {
+  width: 20px;
+}
+
+.box {
+  display: flex;
+  gap: 10px;
+}
+
+.date-box {
+  display: flex;
+  gap: 20px;
+}
+
+.date {
+  font-size: 14px;
+  color: rgb(190, 190, 190);
+}
+
+.date-box > button {
+  cursor: pointer;
+  color: rgb(150, 150, 150);
+  font-size: 14px;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.date-box > button:hover {
+  cursor: pointer;
+  color: white;
+  background-color: red;
+  font-size: 14px;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
