@@ -3,8 +3,11 @@ import "./List.css";
 import ListItem from "./ListItem";
 import { useMemo } from "react";
 import { useEffect } from "react";
+import { useContext } from "react";
+import { TodoStateContext } from "../App";
 
-const List = ({ todos, onUpdate, onDelete }) => {
+const List = () => {
+  const { todos } = useContext(TodoStateContext);
   const [search, setSearch] = useState("");
 
   const onChangeInput = (e) => {
@@ -47,12 +50,7 @@ const List = ({ todos, onUpdate, onDelete }) => {
       />
       <div className="list_wrapper">
         {filterTodos.map((data) => (
-          <ListItem
-            key={data.id}
-            {...data}
-            onUpdate={onUpdate}
-            onDelete={onDelete}
-          />
+          <ListItem key={data.id} {...data} />
         ))}
       </div>
     </div>

@@ -1,9 +1,10 @@
-import { useState, useRef, useReducer, useCallback } from "react";
+import { useState, useRef, useReducer, useCallback, useMemo } from "react";
 import "./App.css";
 import Edit from "./components/Edit";
 import Header from "./components/Header";
 import List from "./components/List";
 import Exam from "./components/Exam";
+import { createContext } from "react";
 
 const mockData = [
   {
@@ -46,6 +47,10 @@ function reducer(todos, action) {
   }
 }
 
+// context
+export const TodoStateContext = createContext();
+export const TodoDispatchContext = createContext();
+
 function App() {
   // 상태관리
   // const [todos, setTodos] = useState(mockData);
@@ -76,13 +81,22 @@ function App() {
     dispatch({ type: "DELETE", data: { tagId } });
   }, []);
 
+  // useMemo 1번만 실행 처리
+  const memorizeDispatche = useMemo(() => {
+    return { onInsert, onUpdate, onDelete };
+  }, []);
+
   return (
     <>
       <div className="App">
         <Header />
         <Exam />
-        <Edit onInsert={onInsert} />
-        <List todos={todos} onUpdate={onUpdate} onDelete={onDelete} />
+        <TodoStateContext.Provider value={{ todos }}>
+          <TodoDispatchContext.Provider value={memorizeDispatche}>
+            <Edit />
+            <List />
+          </TodoDispatchContext.Provider>
+        </TodoStateContext.Provider>
       </div>
     </>
   );

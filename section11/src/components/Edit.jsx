@@ -1,7 +1,9 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useContext } from "react";
 import "./Edit.css";
+import { TodoDispatchContext } from "../App";
 
-const Edit = ({ onInsert }) => {
+const Edit = () => {
+  const { onInsert } = useContext(TodoDispatchContext);
   const [content, setContent] = useState("");
   const inputRef = useRef("");
 
