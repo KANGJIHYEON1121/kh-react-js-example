@@ -16,7 +16,7 @@ const mockData = [
   },
   {
     id: 2,
-    createdDate: new Date().getTime(),
+    createdDate: new Date().getTime() - 24 * 60 * 60 * 1000,
     emotionId: 2,
     content: "2번 일기 내용",
   },
@@ -48,7 +48,7 @@ export function reducer(state, action) {
 
 function App() {
   const [data, dispatch] = useReducer(reducer, mockData);
-  const idRef = useRef(3);
+  const idRef = useRef(4);
 
   // 입력
   const onInsert = (createdDate, emotionId, content) => {
