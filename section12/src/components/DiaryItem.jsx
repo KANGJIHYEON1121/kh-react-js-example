@@ -8,7 +8,7 @@ const DiaryItem = ({ id, emotionId, createdDate, content }) => {
 
   // 일기장 상세 페이지
   const goDiaryPage = () => {
-    nav(`./diary/:${id}`);
+    nav(`./diary/${id}`);
   };
 
   // 일기장 수정 페이지
