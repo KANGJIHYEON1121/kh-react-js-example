@@ -1,0 +1,17 @@
+.new-container {
+  width: 1200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.new-container > form > h1 {
+  margin: 20px 0;
+}
+
+.new-container > form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
