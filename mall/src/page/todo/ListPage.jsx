@@ -1,7 +1,7 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 import Header from "../../include/Header";
-import ListComponent from "../../components/todo/ListComponent";
+import ListComponent from "../../components/ListComponent";
 import { useSearchParams } from "react-router-dom";
 
 const ListPage = () => {
