@@ -23,7 +23,7 @@ function Header() {
               >
                 <NavDropdown.Item href="/todo/list">LIST</NavDropdown.Item>
                 <NavDropdown.Item href="/todo/add">ADD</NavDropdown.Item>
-                <NavDropdown.Item href="/todo/read/3">READ</NavDropdown.Item>
+                <NavDropdown.Item href="/todo/read/2">READ</NavDropdown.Item>
                 <NavDropdown.Item href="/todo/modify/2">
                   MODIFY
                 </NavDropdown.Item>
