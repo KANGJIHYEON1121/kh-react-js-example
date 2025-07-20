@@ -1,0 +1,42 @@
+.modal-complete-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-complete-box {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.16);
+  padding: 36px 40px 28px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-complete-message {
+  font-size: 1.2rem;
+  margin-bottom: 18px;
+}
+
+.modal-complete-btn {
+  background: #0098a3;
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  padding: 8px 32px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.modal-complete-btn:hover {
+  background: #027882;
+}

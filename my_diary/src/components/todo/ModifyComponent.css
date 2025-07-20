@@ -1,0 +1,70 @@
+.modify-container {
+  padding: 40px;
+  max-width: 430px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.modify-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.input {
+  border: 1px solid #d2d2d2;
+  border-radius: 4px;
+  padding: 8px 10px;
+  font-size: 1rem;
+}
+
+.modify-btn-group {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.modify-btn {
+  background: #3874f2;
+  color: #fff;
+  border: none;
+  padding: 0.7em 1.6em;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.delete-btn {
+  background: #f23d3d;
+  color: #fff;
+  border: none;
+  padding: 0.7em 1.6em;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.list-button {
+  background: #aaa;
+  color: #fff;
+  border: none;
+  padding: 0.7em 1.6em;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.modify-btn:hover,
+.delete-btn:hover,
+.list-btn:hover {
+  opacity: 0.85;
+}

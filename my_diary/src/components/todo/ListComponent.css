@@ -1,0 +1,53 @@
+.table-container {
+  border-radius: 10px;
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 24px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+}
+
+th:first-child,
+td:first-child {
+  width: 70px; /* 필요에 따라 조절 */
+  min-width: 60px;
+  max-width: 80px;
+}
+
+th,
+td {
+  padding: 12px 16px;
+  text-align: center;
+  font-weight: 600;
+}
+
+th {
+  background: #f5f6fa;
+  color: #2d3436;
+  border-bottom: 2px solid #b2bec3;
+  font-weight: 600;
+}
+
+tr {
+  transition: background 0.18s;
+  cursor: pointer;
+}
+
+tr:hover {
+  background: #f1f2f6;
+}
+
+td {
+  border-bottom: 1px solid #f1f2f6;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
