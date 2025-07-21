@@ -45,7 +45,7 @@ const ListComponent = () => {
               <tr key={todo.tno} onClick={() => moveToRead(todo.tno)}>
                 <td>{todo.tno}</td>
                 <td>{todo.title}</td>
-                <td>{todo.content}</td>
+                <td>{todo.dueDate}</td>
               </tr>
             );
           })}

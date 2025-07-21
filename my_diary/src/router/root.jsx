@@ -18,14 +18,14 @@ const root = createBrowserRouter([
       </Suspense>
     ),
   },
-  {
-    path: "/todo/about",
-    element: (
-      <Suspense fallback={<Loading />}>
-        <AboutPage />
-      </Suspense>
-    ),
-  },
+  //   {
+  //     path: "/todo/about",
+  //     element: (
+  //       <Suspense fallback={<Loading />}>
+  //         <AboutPage />
+  //       </Suspense>
+  //     ),
+  //   },
   {
     path: "/todo/list",
     element: (
