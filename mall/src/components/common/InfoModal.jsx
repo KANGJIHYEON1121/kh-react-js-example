@@ -11,8 +11,13 @@ const InfoModal = ({ show, onHide, title, content, callbackFn }) => {
         aria-labelledby="contained-modal-title-vcenter"
         centered
       >
-        <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">{title}</Modal.Title>
+        <Modal.Header className="d-flex justify-content-center">
+          <Modal.Title
+            id="contained-modal-title-vcenter"
+            className="d-flex justify-content-center"
+          >
+            {title}
+          </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>

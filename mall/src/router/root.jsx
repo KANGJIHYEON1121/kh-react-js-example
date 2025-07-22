@@ -2,12 +2,22 @@ import React, { Suspense, lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import Loading from "../page/Loading";
 
+// Root 페이지
 const MainPage = lazy(() => import("../page/MainPage"));
 const AboutPage = lazy(() => import("../page/AboutPage"));
+
+// Todo 페이지
 const ListPage = lazy(() => import("../page/todo/ListPage"));
 const AddPage = lazy(() => import("../page/todo/AddPage"));
 const ReadPage = lazy(() => import("../page/todo/ReadPage"));
 const ModifyPage = lazy(() => import("../page/todo/ModifyPage"));
+
+// Product 페이지
+const ProductListPage = lazy(() => import("../page/product/ListPage"));
+const ProductAddPage = lazy(() => import("../page/product/AddPage"));
+const ProductReadPage = lazy(() => import("../page/product/ReadPage"));
+const ProductModifyPage = lazy(() => import("../page/product/ModifyPage"));
+
 const root = createBrowserRouter([
   {
     path: "/",
@@ -25,6 +35,7 @@ const root = createBrowserRouter([
       </Suspense>
     ),
   },
+  // todo 경로
   {
     path: "/todo/list",
     element: (
@@ -54,6 +65,39 @@ const root = createBrowserRouter([
     element: (
       <Suspense fallback={<Loading />}>
         <ModifyPage />
+      </Suspense>
+    ),
+  },
+  // product 경로
+  {
+    path: "/product/list",
+    element: (
+      <Suspense fallback={<Loading />}>
+        <ProductListPage />
+      </Suspense>
+    ),
+  },
+  {
+    path: "/product/add",
+    element: (
+      <Suspense fallback={<Loading />}>
+        <ProductAddPage />
+      </Suspense>
+    ),
+  },
+  {
+    path: "/product/read/:pno",
+    element: (
+      <Suspense fallback={<Loading />}>
+        <ProductReadPage />
+      </Suspense>
+    ),
+  },
+  {
+    path: "/product/modify/:pno",
+    element: (
+      <Suspense fallback={<Loading />}>
+        <ProductModifyPage />
       </Suspense>
     ),
   },
