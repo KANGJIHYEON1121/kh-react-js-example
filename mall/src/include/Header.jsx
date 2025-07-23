@@ -23,10 +23,6 @@ function Header() {
               >
                 <NavDropdown.Item href="/todo/list">LIST</NavDropdown.Item>
                 <NavDropdown.Item href="/todo/add">ADD</NavDropdown.Item>
-                {/* <NavDropdown.Item href="/todo/read/2">READ</NavDropdown.Item>
-                <NavDropdown.Item href="/todo/modify/2">
-                  MODIFY
-                </NavDropdown.Item> */}
                 <NavDropdown.Divider />
                 <NavDropdown.Item href="#action/3.4">예비용</NavDropdown.Item>
               </NavDropdown>
@@ -37,10 +33,6 @@ function Header() {
               >
                 <NavDropdown.Item href="/product/list">LIST</NavDropdown.Item>
                 <NavDropdown.Item href="/product/add">ADD</NavDropdown.Item>
-                <NavDropdown.Item href="/product/read/3">READ</NavDropdown.Item>
-                <NavDropdown.Item href="/product/modify/2">
-                  MODIFY
-                </NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item href="#action/3.4">예비용</NavDropdown.Item>
               </NavDropdown>
