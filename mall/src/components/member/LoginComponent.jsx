@@ -2,7 +2,9 @@ import { React, useState } from "react";
 import { FloatingLabel, Form, Button } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { login } from "../../slices/loginSlice";
+import { login, loginPostAsync } from "../../slices/loginSlice";
+import useCustomLogin from "../../hooks/useCustomLogin";
+import KakaoLoginComponent from "./KakaoLoginComponent";
 
 const initState = {
   email: "",
@@ -11,7 +13,10 @@ const initState = {
 
 export default function LoginComponent() {
   const [loginParam, setLoginParam] = useState({ ...initState });
+
   const dispatch = useDispatch();
+
+  const { doLogin, moveToPath } = useCustomLogin();
 
   const handleChange = (e) => {
     loginParam[e.target.name] = e.target.value;
@@ -20,7 +25,22 @@ export default function LoginComponent() {
 
   // username, password 서버 전송 -> access token -> cookie 넣고 -> loginSlice 금고 (email: 로그인한 진짜 이메일)
   const handleClickLogin = (e) => {
-    dispatch(login(loginParam));
+    doLogin(loginParam);
+    // dispatch(login(loginParam)); // 동기화 호출
+    // loginSlice의 비동기 호출
+    dispatch(loginPostAsync(loginParam))
+      .unwrap()
+      .then((data) => {
+        console.log("after unwrap");
+        console.log(data);
+        if (data.error) {
+          alert("이메일과 패스워드를 다시 확인해주세요.");
+          setLoginParam({ ...initState });
+        } else {
+          alert("로그인 성공");
+          moveToPath("/");
+        }
+      });
   };
 
   return (
@@ -53,6 +73,7 @@ export default function LoginComponent() {
           로그인
         </Button>
       </div>
+      <KakaoLoginComponent />
     </>
   );
 }

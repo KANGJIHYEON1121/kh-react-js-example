@@ -7,7 +7,7 @@ const MainPage = () => {
     <Container>
       <Header />
       <div className="d-grid gap-2 mt-3">
-        <button type="button" class="btn btn-outline-secondary">
+        <button type="button" className="btn btn-outline-secondary">
           Main Page
         </button>
       </div>

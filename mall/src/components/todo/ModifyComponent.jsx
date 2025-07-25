@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Form, Container } from "react-bootstrap";
-import { getOne, putOne, deleteOne } from "../../api/todoApi";
+import { getOne, putOne, deleteOne } from "../../api/TodoApi";
 import InfoModal from "../common/InfoModal";
 
 const initState = {

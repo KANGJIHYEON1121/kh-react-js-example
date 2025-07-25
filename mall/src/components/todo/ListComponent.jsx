@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import useCustomMove from "../../hooks/useCustomMove";
-import { getList } from "../../api/todoApi";
+import { getList } from "../../api/TodoApi";
 import { Container } from "react-bootstrap";
 import PageComponent from "../common/PageComponent";
 
