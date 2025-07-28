@@ -16,14 +16,13 @@ const ModifyPage = lazy(() => import("../page/todo/ModifyPage"));
 const ProductListPage = lazy(() => import("../page/product/ListPage"));
 const ProductAddPage = lazy(() => import("../page/product/AddPage"));
 const ProductReadPage = lazy(() => import("../page/product/ReadPage"));
-const ProductModifyPage = lazy(() => import("../page/product/ModifyPage"));
 
-// Login 페이지
+// Login page, Kakao page
 const LoginPage = lazy(() => import("../page/member/LoginPage"));
 const LogoutPage = lazy(() => import("../page/member/LogoutPage"));
-
-// Kakao page
+const MemberModify = lazy(() => import("../page/member/ModifyPage"));
 const KakaoRedirect = lazy(() => import("../page/member/KakaoRedirectPage"));
+const ProductModifyPage = lazy(() => import("../page/product/ModifyPage"));
 
 const root = createBrowserRouter([
   {
@@ -108,6 +107,7 @@ const root = createBrowserRouter([
       </Suspense>
     ),
   },
+  // kakao page, Login page 경로
   {
     path: "/member/login",
     element: (
@@ -124,12 +124,19 @@ const root = createBrowserRouter([
       </Suspense>
     ),
   },
-  // kakao page 경로
   {
     path: "/member/kakao",
     element: (
       <Suspense fallback={<Loading />}>
         <KakaoRedirect />
+      </Suspense>
+    ),
+  },
+  {
+    path: "/member/modify",
+    element: (
+      <Suspense fallback={Loading}>
+        <MemberModify />
       </Suspense>
     ),
   },
